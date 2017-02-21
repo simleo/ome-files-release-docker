@@ -1,0 +1,1 @@
+(for pat in "*.tif" "*.tiff" "*.tf2" "*.tf8" "*.btf" "*.companion.ome"; do find /ome/data_repo/curated/ome-tiff/ome-schemas/ -name "${pat}"; done) | while read f; do echo "TEST READ: ${f}"; if ome-files info "${f}"; then echo "**SUCCESS** ${f}"; else echo "**FAIL**: ${f}"; fi; done
